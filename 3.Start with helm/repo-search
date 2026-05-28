@@ -1,0 +1,22 @@
+#List Repo
+helm repo list
+
+#Add the repo
+helm repo add bitnami https://charts.bitnami.com/bitnami
+
+#Remove the repo
+helm repo remove bitnami
+
+----------------------------------------Search--------------------------------------------
+
+#Search in all repo
+helm search repo mysql
+
+#search in all repo with particular version
+helm search repo mysql --version 14.0.3
+
+#search in particular repo 
+helm search repo bitnami/nginx
+
+#Search in Artifact Hub
+helm search hub mysql 
