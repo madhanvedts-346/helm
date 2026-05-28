@@ -1,0 +1,16 @@
+without helm?
+Without Helm, we deploy applications using plain Kubernetes YAML manifests directly with kubectl. 
+The disadvantages are YAML duplication, difficult environment management, and lack of reusable templating/versioning, which makes managing large applications harder.
+
+what is helm?
+Helm is a package manager for Kubernetes used to simplify application deployment and management. 
+It uses reusable templates called Helm Charts to deploy Kubernetes resources like Deployments, Services, and Ingress together. 
+Helm helps with versioning, configuration management, and easier deployments across multiple environments.
+
+Popular repo for helm?
+1.Artifact Hub
+2.Bitnami repo
+
+what is helm chart?
+A Helm Chart is a collection of Kubernetes YAML templates and configuration files used by Helm to deploy an application. 
+It packages all Kubernetes resources like Deployment, Service, ConfigMap, and Ingress into a reusable and version-controlled structure.
