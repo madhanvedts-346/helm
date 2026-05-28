@@ -1,0 +1,10 @@
+#follow the documentation for install helm in your k8s
+
+https://helm.sh/docs/intro/install/
+
+#After the for verification run this command
+helm help
+helm version
+
+
+
