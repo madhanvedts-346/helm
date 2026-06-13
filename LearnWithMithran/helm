@@ -1,0 +1,63 @@
+what is helm?
+Helm is a package manager for Kubernetes used to simplify application deployment and management. 
+It uses reusable templates called Helm Charts to deploy Kubernetes resources like Deployments, Services, and Ingress together. 
+Helm helps with versioning, configuration management, and easier deployments across multiple environments.
+
+difference between helm 2 and helm3
+Helm 2:Client-server; required Tiller inside the cluster to manage releases.
+       Tiller operated with broad "God mode" cluster privileges, causing multi-tenant security risks.
+  
+Helm 3:Client-only; Helm communicates directly with the Kubernetes API using kubeconfig.
+       Relies natively on Kubernetes RBAC. Your personal permissions determine what you can deploy.
+
+
+#Configure awscli
+aws configure
+#give username and secret key
+aws s3 ls
+
+#Install and Configure kubectl
+curl -o kubectl https://s3.us-west-2.amazonaws.com/amazon-eks/1.29.0/2024-01-04/bin/linux/amd64/kubectl
+chmod +x ./kubectl
+sudo mv ./kubectl /usr/local/bin
+kubectl version --client
+
+#Install Helm 3
+curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
+helm version
+
+#Connect to Your EKS Cluster
+aws eks update-kubeconfig --name my-eks-cluster --region ap-south-1
+kubectl get nodes
+
+
+#add repo
+helm repo add bitnami https://charts.bitnami.com/bitnami
+
+#list the repo
+helm repo list
+
+#search in repo
+helm search repo
+
+#install from repo
+helm install nginx bitnami/nginx
+
+#list installed chart
+helm list
+
+#update the chart
+helm upgrade --install nginx bitnami/nginx --set replicaCount=2
+
+#see the chart history
+helm history nginx
+
+#rollback to previous version
+helm rollback nginx
+
+#rollback to particular version
+helm rollback nginx <revision number>
+
+#uninstall the chart
+helm uninstall nginx
+
